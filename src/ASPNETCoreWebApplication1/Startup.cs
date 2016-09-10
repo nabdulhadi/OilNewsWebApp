@@ -20,8 +20,14 @@ namespace ASPNETCoreWebApplication1
       var builder = new ConfigurationBuilder()
           .SetBasePath(env.ContentRootPath)
           .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
-          .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
-          .AddEnvironmentVariables();
+          .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true);
+
+      if (env.IsDevelopment())
+      {
+        builder.AddUserSecrets();
+      }
+
+      builder.AddEnvironmentVariables();
       Configuration = builder.Build();
     }
 
@@ -29,16 +35,34 @@ namespace ASPNETCoreWebApplication1
 
     public void ConfigureServices(IServiceCollection services)
     {
-      services.AddDbContext<MoviesAppContext>(options => options.UseSqlServer(Configuration.GetSection("Data:DefaultConnection")["ConnectionString"]));
+      services.AddDbContext<OilsAppContext>(options =>
+        options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"))
+       );
 
-      services.AddMvc();
+      services.AddDbContext<MoviesAppContext>(options =>
+        options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"))
+       );
+
       services.AddLogging();
+      services.AddMvc();
     }
 
     public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
     {
       loggerFactory.AddConsole(Configuration.GetSection("Logging"));
       loggerFactory.AddDebug();
+
+      if (env.IsDevelopment())
+      {
+        app.UseDeveloperExceptionPage();
+        //app.UseBrowserLink();
+      }
+      else
+      {
+        app.UseExceptionHandler("/Error");
+      }
+
+      app.UseStaticFiles();
 
       app.UseMvc();
 

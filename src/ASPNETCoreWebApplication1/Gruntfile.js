@@ -11,8 +11,11 @@ module.exports = function (grunt) {
   // configure plugins
   grunt.initConfig({
     uglify: {
-      my_target: {
-        files: { 'wwwroot/app.js': ['Scripts/app.js', 'Scripts/**/*.js'] }
+      movies: {
+        files: { 'wwwroot/moviesApp.js': ['Scripts/**/movies*.js'] }
+      },
+      oils: {
+        files: { 'wwwroot/oilsApp.js': ['Scripts/**/oils*.js'] }
       }
     },
 
@@ -21,9 +24,14 @@ module.exports = function (grunt) {
         separator: ' '
       },
 
-      dist: {
-        src: ['Scripts/app.js', 'Scripts/**/*.js'],
-        dest: 'wwwroot/app.js'
+      movies: {
+        src: ['Scripts/moviesApp.js', 'Scripts/**/movies*.js'],
+        dest: 'wwwroot/moviesApp.js'
+      },
+
+      oils: {
+        src: ['Scripts/oilsApp.js', 'Scripts/**/oils*.js'],
+        dest: 'wwwroot/oilsApp.js'
       }
     },
 

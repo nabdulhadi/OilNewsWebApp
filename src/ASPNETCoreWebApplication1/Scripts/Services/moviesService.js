@@ -2,8 +2,8 @@
   'use strict';
 
   angular
-      .module('moviesServices', ['ngResource'])
-      .factory('Movie', Movie);
+    .module('moviesServices', ['ngResource'])
+    .factory('Movie', Movie);
 
   Movie.$inject = ['$resource'];
 

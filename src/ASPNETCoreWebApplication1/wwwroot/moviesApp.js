@@ -9,27 +9,29 @@
 
   function config($routeProvider, $locationProvider) {
     $routeProvider
-        .when('/', {
-          templateUrl: '/views/list.html',
-          controller: 'MoviesListController'
-        })
-        .when('/movies/add', {
-          templateUrl: '/views/add.html',
-          controller: 'MoviesAddController'
-        })
-        .when('/movies/edit/:id', {
-          templateUrl: '/views/edit.html',
-          controller: 'MoviesEditController'
-        })
-        .when('/movies/delete/:id', {
-          templateUrl: '/views/delete.html',
-          controller: 'MoviesDeleteController'
-        });
+      .when('/movies', {
+        templateUrl: '/movies/list.html',
+        controller: 'MoviesListController'
+      })
+      .when('/movies/add', {
+        templateUrl: '/movies/add.html',
+        controller: 'MoviesAddController'
+      })
+      .when('/movies/edit/:id', {
+        templateUrl: '/movies/edit.html',
+        controller: 'MoviesEditController'
+      })
+      .when('/movies/delete/:id', {
+        templateUrl: '/movies/delete.html',
+        controller: 'MoviesDeleteController'
+      });
 
     $locationProvider.html5Mode(true);
   }
 
-})(); (function () {
+})();
+
+ (function () {
   'use strict';
    
   angular
@@ -53,7 +55,7 @@
     $scope.movie = new Movie();
     $scope.add = function () {
       $scope.movie.$save(function () {
-        $location.path('/');
+        $location.path('/movies');
       });
     };
   }
@@ -65,7 +67,7 @@
     $scope.movie = Movie.get({ id: $routeParams.id });
     $scope.edit = function () {
       $scope.movie.$save(function () {
-        $location.path('/');
+        $location.path('/movies');
       });
     };
   }
@@ -77,7 +79,7 @@
     $scope.movie = Movie.get({ id: $routeParams.id });
     $scope.remove = function () {
       $scope.movie.$remove({ id: $scope.movie.id }, function () {
-        $location.path('/');
+        $location.path('/movies');
       });
     };
   }
@@ -89,8 +91,8 @@
   'use strict';
 
   angular
-      .module('moviesServices', ['ngResource'])
-      .factory('Movie', Movie);
+    .module('moviesServices', ['ngResource'])
+    .factory('Movie', Movie);
 
   Movie.$inject = ['$resource'];
 

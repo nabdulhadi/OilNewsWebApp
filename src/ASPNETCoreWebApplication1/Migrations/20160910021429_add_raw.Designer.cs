@@ -8,8 +8,8 @@ using ASPNETCoreWebApplication1.Models;
 namespace ASPNETCoreWebApplication1.Migrations
 {
     [DbContext(typeof(OilsAppContext))]
-    [Migration("20160908021255_InitialModel")]
-    partial class InitialModel
+    [Migration("20160910021429_add_raw")]
+    partial class add_raw
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -17,18 +17,20 @@ namespace ASPNETCoreWebApplication1.Migrations
                 .HasAnnotation("ProductVersion", "1.0.0-rtm-21431")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("ASPNETCoreWebApplication1.Models.Movie", b =>
+            modelBuilder.Entity("ASPNETCoreWebApplication1.Models.Oil", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Director");
+                    b.Property<string>("Description");
 
-                    b.Property<string>("Title");
+                    b.Property<string>("Raw");
+
+                    b.Property<DateTime>("Timestamp");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Movies");
+                    b.ToTable("Oils");
                 });
         }
     }

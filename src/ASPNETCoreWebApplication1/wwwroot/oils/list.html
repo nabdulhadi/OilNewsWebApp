@@ -1,0 +1,24 @@
+﻿<div>
+
+  <h1>Oil News</h1>
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>Timestamp</th>
+        <th>Description</th>
+        <th>Raw</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="oil in oils">
+        <td>{{oil.timestamp | date:'MM/dd/yyyy h:mma'}}</td>
+        <td>{{oil.description}}</td>
+        <td>{{oil.raw}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>
+    <a href="/oils/add" class="btn btn-primary">Add News</a>
+  </p>
+</div>

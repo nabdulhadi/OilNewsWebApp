@@ -4,12 +4,13 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 
+
 namespace ASPNETCoreWebApplication1.Models
 {
-  public class MoviesAppContext : DbContext
+  public class OilsAppContext : DbContext
   {
-    public MoviesAppContext(DbContextOptions<MoviesAppContext> options) : base(options) { }
+    public OilsAppContext(DbContextOptions<OilsAppContext> options) : base(options) { }
 
-    public DbSet<Movie> Movies { get; set; }
+    public DbSet<Oil> Oils { get; set; }
   }
 }

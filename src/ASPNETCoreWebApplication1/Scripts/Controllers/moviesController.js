@@ -22,7 +22,7 @@
     $scope.movie = new Movie();
     $scope.add = function () {
       $scope.movie.$save(function () {
-        $location.path('/');
+        $location.path('/movies');
       });
     };
   }
@@ -34,7 +34,7 @@
     $scope.movie = Movie.get({ id: $routeParams.id });
     $scope.edit = function () {
       $scope.movie.$save(function () {
-        $location.path('/');
+        $location.path('/movies');
       });
     };
   }
@@ -46,7 +46,7 @@
     $scope.movie = Movie.get({ id: $routeParams.id });
     $scope.remove = function () {
       $scope.movie.$remove({ id: $scope.movie.id }, function () {
-        $location.path('/');
+        $location.path('/movies');
       });
     };
   }

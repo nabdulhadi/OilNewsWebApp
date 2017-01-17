@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ASPNETCoreWebApplication1.Models
+namespace OilNewsWebApp.Models
 {
   public class Oil
   {

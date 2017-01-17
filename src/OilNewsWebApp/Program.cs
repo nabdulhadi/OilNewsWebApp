@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Logging;
 
-namespace ASPNETCoreWebApplication1
+namespace OilNewsWebApp
 {
   public class Program
   {

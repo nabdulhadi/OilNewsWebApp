@@ -3,9 +3,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
-using ASPNETCoreWebApplication1.Models;
+using OilNewsWebApp.Models;
 
-namespace ASPNETCoreWebApplication1.Migrations
+namespace OilNewsWebApp.Migrations
 {
   [DbContext(typeof(MoviesAppContext))]
   partial class MoviesAppContextModelSnapshot : ModelSnapshot
@@ -16,7 +16,7 @@ namespace ASPNETCoreWebApplication1.Migrations
           .HasAnnotation("ProductVersion", "1.0.0-rtm-21431")
           .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-      modelBuilder.Entity("ASPNETCoreWebApplication1.Models.Movie", b =>
+      modelBuilder.Entity("OilNewsWebApp.Models.Movie", b =>
           {
             b.Property<int>("Id")
                       .ValueGeneratedOnAdd();

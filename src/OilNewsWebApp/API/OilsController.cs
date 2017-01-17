@@ -7,9 +7,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
-using ASPNETCoreWebApplication1.Models;
+using OilNewsWebApp.Models;
 
-namespace ASPNETCoreWebApplication1.API
+namespace OilNewsWebApp.API
 {
   [Route("api/[controller]")]
   public class OilsController : Controller

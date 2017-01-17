@@ -3,26 +3,27 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
-using ASPNETCoreWebApplication1.Models;
+using OilNewsWebApp.Models;
 
-namespace ASPNETCoreWebApplication1.Migrations
+namespace OilNewsWebApp.Migrations
 {
     [DbContext(typeof(OilsAppContext))]
-    [Migration("20160909165136_add_oils")]
-    partial class add_oils
+    partial class OilsAppContextModelSnapshot : ModelSnapshot
     {
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.0.0-rtm-21431")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("ASPNETCoreWebApplication1.Models.Oil", b =>
+            modelBuilder.Entity("OilNewsWebApp.Models.Oil", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
                     b.Property<string>("Description");
+
+                    b.Property<string>("Raw");
 
                     b.Property<DateTime>("Timestamp");
 

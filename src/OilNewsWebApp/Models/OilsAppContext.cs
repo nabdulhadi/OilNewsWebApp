@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 
 
-namespace ASPNETCoreWebApplication1.Models
+namespace OilNewsWebApp.Models
 {
   public class OilsAppContext : DbContext
   {

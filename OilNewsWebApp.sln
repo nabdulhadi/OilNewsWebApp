@@ -10,7 +10,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		global.json = global.json
 	EndProjectSection
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "ASPNETCoreWebApplication1", "src\ASPNETCoreWebApplication1\ASPNETCoreWebApplication1.xproj", "{C138F8B5-9F43-4E43-A657-A1EFEF1E4480}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "OilNewsWebApp", "src\OilNewsWebApp\OilNewsWebApp.xproj", "{C138F8B5-9F43-4E43-A657-A1EFEF1E4480}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

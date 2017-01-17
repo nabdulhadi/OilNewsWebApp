@@ -9,9 +9,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
-using ASPNETCoreWebApplication1.Models;
+using OilNewsWebApp.Models;
 
-namespace ASPNETCoreWebApplication1
+namespace OilNewsWebApp
 {
   public class Startup
   {

@@ -3,31 +3,31 @@ using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Metadata;
 
-namespace ASPNETCoreWebApplication1.Migrations
+namespace OilNewsWebApp.Migrations
 {
-  public partial class InitialModel : Migration
+  public partial class add_oils : Migration
   {
     protected override void Up(MigrationBuilder migrationBuilder)
     {
       migrationBuilder.CreateTable(
-          name: "Movies",
+          name: "Oils",
           columns: table => new
           {
             Id = table.Column<int>(nullable: false)
                   .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-            Director = table.Column<string>(nullable: true),
-            Title = table.Column<string>(nullable: true)
+            Description = table.Column<string>(nullable: true),
+            Timestamp = table.Column<DateTime>(nullable: false)
           },
           constraints: table =>
           {
-            table.PrimaryKey("PK_Movies", x => x.Id);
+            table.PrimaryKey("PK_Oils", x => x.Id);
           });
     }
 
     protected override void Down(MigrationBuilder migrationBuilder)
     {
       migrationBuilder.DropTable(
-          name: "Movies");
+          name: "Oils");
     }
   }
 }

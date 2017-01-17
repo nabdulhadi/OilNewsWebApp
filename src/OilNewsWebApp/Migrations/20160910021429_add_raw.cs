@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace ASPNETCoreWebApplication1.Migrations
+namespace OilNewsWebApp.Migrations
 {
   public partial class add_raw : Migration
   {
